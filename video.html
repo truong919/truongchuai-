@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Góc Video - Báo tường điện tử</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #1e90ff;
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        main {
+            max-width: 900px;
+            background: white;
+            margin: -40px auto 40px;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        h2 {
+            color: #1e90ff;
+            text-align: center;
+        }
+
+        video {
+            display: block;
+            margin: 20px auto;
+            width: 80%;
+            border-radius: 12px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+        }
+
+        a.back {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: white;
+            background-color: #1e90ff;
+            padding: 10px 20px;
+            border-radius: 6px;
+        }
+
+        a.back:hover {
+            background-color: #0b6edc;
+        }
+           .menu-btn {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.menu {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 25px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+
+.menu a {
+    display: block;
+    padding: 12px 20px;
+    text-decoration: none;
+    color: #333;
+}
+
+.menu a:hover {
+    background-color: #1e90ff;
+    color: white;
+}
+#commentList {
+    margin-top: 30px;
+}
+
+.comment-item {
+    background-color: #f1f9ff;
+    padding: 12px;
+    border-left: 5px solid #1e90ff;
+    margin-bottom: 12px;
+    border-radius: 6px;
+}
+
+.comment-item strong {
+    color: #1e90ff;
+}
+.step-wrapper {
+  display: flex;
+  gap: 12px;              /* khoảng cách giữa các số */
+}
+
+.step {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;     /* tạo hình tròn */
+  background: #f0f0f0;
+  color: #333;
+  text-decoration: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: bold;
+  transition: all 0.25s ease;
+}
+
+/* hiệu ứng nổi khi hover */
+.step:hover {
+  background: #4f46e5;
+  color: white;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+
+
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+<div class="menu" id="menu">
+    <a href="index.html">Trang chủ</a>
+    <a href="phim.html">phim ngắn</a>
+    <a href="video.html">Video</a>
+    <a href="tkb.html">thời khóa biểu</a>
+</div>
+
+    <h1>Góc Video Môi Trường</h1>
+    <p>Báo tường điện tử – Tổ 4</p>
+</header>
+
+<main>
+    <h2>Video tuyên truyền bảo vệ môi trường</h2>
+
+    <video src="video/video.mp4" controls></video>
+
+    <p>
+        Video phản ánh thực trạng ô nhiễm môi trường hiện nay và kêu gọi mỗi cá nhân
+        nâng cao ý thức bảo vệ thiên nhiên, vì một tương lai xanh – sạch – đẹp.
+    </p>
+
+    <a href="index.html" class="back">⬅ Quay về trang chủ</a>
+     <div class="step-wrapper">
+        <a>trang</a>
+      <a href="index.html" class="step">1</a>
+  <a href="2.html" class="step">2</a>
+  <a href="3.html" class="step">3</a>
+  <a href="4.html" class="step">4</a>
+  <a href="5.html" class="step">5</a>
+  <a href="6.html" class="step">6</a>
+  <a href="7.html" class="step">7</a>
+</div>
+</main>
+<script>
+function toggleMenu() {
+    const menu = document.getElementById("menu");
+    menu.style.display = menu.style.display === "block" ? "none" : "block";
+}
+</script>
+<script>
+document.getElementById("commentForm").addEventListener("submit", function(e) {
+    e.preventDefault(); // không reload trang
+
+    const name = document.getElementById("name").value;
+    const comment = document.getElementById("comment").value;
+
+    const commentDiv = document.createElement("div");
+    commentDiv.classList.add("comment-item");
+
+    commentDiv.innerHTML = `<strong>${name}</strong><p>${comment}</p>`;
+
+    document.getElementById("commentList").appendChild(commentDiv);
+
+    // reset form
+    document.getElementById("commentForm").reset();
+});
+</script>s
+</body>
+</html>

@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Báo tường điện tử</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+    body {
+    font-family: 'Poppins', Arial, sans-serif;
+
+
+  font-family: 'Poppins', Arial, sans-serif;
+
+  background-image: url("anh/nen.jpg");
+  background-repeat: repeat;
+  background-size: auto;
+  background-color: #f5f5f5; /* màu dự phòng */
+  margin: 0
+}
+
+
+.header {
+    position: relative; /* THÊM DÒNG NÀY */
+width: 99vw;          /* FULL chiều ngang */
+
+    left: 50%;
+    transform: translateX(-50%);
+    background-image:
+        linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+        url("anh/12a1.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    color: white;
+    text-align: center;
+    padding: 60px 20px 140px;
+}
+
+
+
+.header h1 {
+    display: inline-block;
+    font-size: 38px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #fff;
+
+    background: rgba(0, 0, 0, 0.4);
+    padding: 12px 40px;  
+    /*chinh sua kich thuoc cua h1 -12A1-*/
+    border-radius: 35px;
+
+    /* tăng độ nổi */
+    text-shadow:
+        0 0 6px rgba(0,0,0,0.9),
+        0 2px 10px rgba(0,0,0,0.9);
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,0.6),
+        inset 0 0 0 2px rgba(255,255,255,0.35);
+}
+
+
+
+/* GẠCH CHÂN ĐẸP CHO H2 */
+.content h2 {
+    position: relative;
+    padding-bottom: 8px;
+}
+
+
+
+.content {
+    background-color: white;
+    max-width: 1100px;
+    margin: -80px auto 40px; /* kéo phần trắng đè lên nền xanh */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    position: relative;
+    z-index: 10;
+}
+
+
+.content section {
+    margin-bottom: 30px;
+}
+
+.content h2 {
+    position: relative;
+    padding-bottom: 8px;
+}
+
+.content h2::after {
+    content: "";
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(to right, #1e90ff, #00c6ff);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    border-radius: 4px;
+}
+.class-name {
+    position: absolute;
+    top: -10px;
+    left: 25px;
+
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    
+
+    box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+}
+
+.group-name {
+    position: absolute;
+    top: 10px;   /* nằm ngay dưới 12A1 */
+    left: 25px;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    color: #fff;
+    background: rgba(0,0,0,0.45);
+    padding: 4px 14px;
+    border-radius: 16px;
+}
+
+
+
+img, video {
+    display: block;
+    margin: 15px auto;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+}
+article {
+    transition: transform 0.3s, box-shadow 0.3s;
+    background: #fff;
+    padding: 20px;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+    margin-bottom: 25px;
+}
+/* ===== DYNAMIC ISLAND STYLE ===== */
+article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 8px;
+}
+
+button {
+    padding: 8px 16px;
+    background-color: #1e90ff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.img-row{
+    /* CHỈNH CHO HÌNH NẰM NGANG NHAU */
+  display: flex;
+  justify-content: center; /* căn giữa */
+  gap: 20px;               /* khoảng cách giữa 2 hình */
+}
+
+
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+.menu-btn {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.menu {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 25px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+
+.menu a {
+    display: block;
+    padding: 12px 20px;
+    text-decoration: none;
+    color: #333;
+}
+
+.menu a:hover {
+    background-color: #1e90ff;
+    color: white;
+}
+#commentList {
+    margin-top: 30px;
+}
+
+.comment-item {
+    background-color: #f1f9ff;
+    padding: 12px;
+    border-left: 5px solid #1e90ff;
+    margin-bottom: 12px;
+    border-radius: 6px;
+}
+
+.comment-item strong {
+    color: #1e90ff;
+}
+
+/* ================= DYNAMIC ISLAND ================= */
+.dynamic-island{
+    position:fixed;
+    top:15px;
+    left:50%;
+    transform:translateX(-50%);
+    background:#000;
+    color:#fff;
+    border-radius:40px;
+    padding:10px 22px;
+    width:140px;
+    height:42px;
+    cursor:pointer;
+    z-index:9999;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,.4);
+    transition:
+        width .4s ease,
+        height .4s ease,
+        padding .4s ease,
+        border-radius .4s ease,
+        box-shadow .25s ease,
+        transform .25s cubic-bezier(.34,1.56,.64,1);
+}
+
+/* HOVER – CHỈ KHI ĐÓNG */
+.dynamic-island:not(.active):hover{
+    transform:translateX(-50%) scale(1.06);
+    box-shadow:0 14px 40px rgba(0,0,0,.6);
+}
+
+/* NẢY KHI RỜI CHUỘT (CHỈ ĐÓNG) */
+.dynamic-island:not(:hover):not(.active):not(.opening){
+    animation:islandBounceBack .35s ease-out;
+}
+
+/* TRẠNG THÁI MỞ */
+.dynamic-island.active{
+    width:320px;
+    max-width:90%;
+    height:300px;
+    padding:20px;
+    border-radius:25px;
+    animation:islandOpen .5s cubic-bezier(.25,1.4,.4,1);
+}
+
+/* TẮT HOVER KHI MỞ */
+.dynamic-island.active:hover{
+    transform:translateX(-50%) scale(1);
+}
+
+/* ANIMATION */
+@keyframes islandBounceBack{
+    0%{transform:translateX(-50%) scale(1.06);}
+    40%{transform:translateX(-50%) scale(.96);}
+    70%{transform:translateX(-50%) scale(1.02);}
+    100%{transform:translateX(-50%) scale(1);}
+}
+@keyframes islandOpen{
+    0%{transform:translateX(-50%) scale(.92);}
+    60%{transform:translateX(-50%) scale(1.04);}
+    100%{transform:translateX(-50%) scale(1);}
+}
+
+/* NỘI DUNG */
+.island-title{
+    font-size:15px;
+    font-weight:600;
+}
+.island-close{
+    position:absolute;
+    right:18px;
+    top:12px;
+    font-size:18px;
+    cursor:pointer;
+    display:none;
+}
+.dynamic-island.active .island-close{
+    display:block;
+}
+.island-content{
+    margin-top:35px;
+    display:none;
+    font-size:14px;
+}
+.dynamic-island.active .island-content{
+    display:block;
+}
+.signin-btn{
+    position:absolute;
+    top:22px;
+    right:70px;
+    padding:6px 14px;
+    background:#1e90ff;
+    color:white;
+    border-radius:18px;
+    font-size:14px;
+    cursor:pointer;
+    box-shadow:0 4px 12px rgba(0,0,0,.3);
+}
+.signin-btn:hover{
+    background:#0b6fd6;
+}
+.login-overlay{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.6);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
+
+.login-box{
+    background:white;
+    padding:25px;
+    border-radius:14px;
+    width:500px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,.4);
+}
+
+.login-box h3{
+    margin-bottom:15px;
+}
+
+.login-box input{
+    width:100%;
+    padding:8px;
+    margin:8px 0;
+}
+
+.login-box button{
+    width:100%;
+    margin-top:10px;
+}
+
+.login-box p{
+    margin-top:12px;
+    color:#1e90ff;
+    cursor:pointer;
+}
+
+.google-btn{
+    background:#fff;
+    color:#333;
+    border:1px solid #ccc;
+    margin-top:10px;
+}
+.apple-btn{
+    background:#000;
+    color:#fff;
+    margin-top:8px;
+}
+.login-box button{
+    width:100%;
+    padding:8px;
+    border-radius:8px;
+    cursor:pointer;
+}
+.user-icon{
+    position:absolute;
+    top:20px;
+    right:50px;
+    font-size:24px;
+    display:none;
+    cursor:pointer;
+}
+
+.step-wrapper {
+  display: flex;
+  gap: 12px;              /* khoảng cách giữa các số */
+}
+
+.step {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;     /* tạo hình tròn */
+  background: #f0f0f0;
+  color: #333;
+  text-decoration: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: bold;
+  transition: all 0.25s ease;
+}
+
+/* hiệu ứng nổi khi hover */
+.step:hover {
+  background: #4f46e5;
+  color: white;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+
+
+
+/* ===== SEARCH BOX ===== */
+.search-box {
+    position: absolute;
+    top: 22px;
+    right: 150px; /* nằm bên trái Sign in */
+    display: flex;
+    align-items: center;
+
+    background: rgba(255,255,255,0.95);
+    border-radius: 20px;
+    padding: 4px 10px;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+.search-box input {
+    border: none;
+    outline: none;
+    background: transparent;
+    width: 140px;
+    font-size: 14px;
+}
+
+.search-icon {
+    font-size: 16px;
+    cursor: pointer;
+}
+.box-wrap {
+    display: flex;
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.box {
+    flex: 1;
+    background: #f8fbff;
+    padding: 18px;
+    border-radius: 12px;
+    border-left: 5px solid #1e90ff;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+.box p {
+    margin-bottom: 12px;
+    line-height: 1.7;
+}
+
+
+
+</style>
+</head>
+<body>
+
+
+    <!-- HEADER -->
+    <header class="header">
+
+        <!-- DYNAMIC ISLAND -->
+<div class="dynamic-island" id="dynamicIsland">
+    <span class="island-title">Thành Viên</span>
+    <span class="island-close" onclick="closeIsland(event)">✕</span>
+
+    <div class="island-content">
+        <ol>
+            <li>Nguyễn Xuân Trường</li>
+            <li>Lê Vĩnh Tiến</li>
+            <li>Nguyễn Minh Thuận</li>
+            <li>Võ Trung Hậu</li>
+            <li>Nguyễn Thị Mẫn Xuyên</li>
+            <li>Nguyễn Thị Anh Thư</li>
+            <li>Trần Chánh Nhựt</li>
+            <li>Lê Đức Toàn</li>
+            <li>Nguyễn Hiền Tấn Phát</li>
+        </ol>
+    </div>
+</div>
+
+<div class="user-icon" id="userIcon">👤</div>
+     <div class="menu-btn" onclick="toggleMenu()">☰</div>
+<div class="signin-btn" onclick="openLogin()">Sign in</div>
+<div class="search-box">
+    <input type="text" id="searchInput" placeholder="Tìm kiếm...">
+    <span class="search-icon" onclick="doSearch()">🔍</span>
+</div>
+
+
+
+<div class="menu" id="menu">
+    <a href="index.html">Trang chủ</a>
+    <a href="phim.html">phim ngắn</a>
+    <a href="video.html">Video</a>
+    <a href="tkb.html">thời khóa biểu</a>
+    <a href="https://www.facebook.com/share/17ceMqJEcd/?mibextid=wwXIfr">my facebook</a>
+</div>
+
+        <h1>12A1</h1>
+      
+    <p class="group-name">Tổ 4</p>
+
+        <img src="anh/logo.PNG" width="100" height="100">
+    </header>
+
+    <!-- CONTENT -->
+    <main class="content">
+
+        <section>
+            <h2>Các biện pháp bảo vệ môi trường hiện </h2>
+
+        </section>
+
+        <section>
+            
+            <article>
+                <h3>1. luật bảo vệ môi trường :( trích )  Điều 4. Nguyên tắc bảo vệ môi trường
+</h3>
+<div class="box-wrap">
+
+    <!-- Ô 1: Điều 1 – 2 – 3 -->
+    <div class="box">
+        <p><b>1.</b> Bảo vệ môi trường là quyền, nghĩa vụ và trách nhiệm của mọi cơ quan, tổ chức, cộng đồng dân cư, hộ gia đình và cá nhân.</p>
+
+        <p><b>2.</b> Bảo vệ môi trường là điều kiện, nền tảng, yếu tố trung tâm, tiên quyết cho phát triển kinh tế – xã hội bền vững. Hoạt động bảo vệ môi trường phải gắn kết với phát triển kinh tế, quản lý tài nguyên và được xem xét, đánh giá trong quá trình thực hiện các hoạt động phát triển.</p>
+
+        <p><b>3.</b> Bảo vệ môi trường gắn kết hài hòa với an sinh xã hội, quyền trẻ em, bình đẳng giới, bảo đảm quyền mọi người được sống trong môi trường trong lành.</p>
+    </div>
+
+    <!-- Ô 2: Điều 4 – 5 – 6 -->
+    <div class="box">
+        <p><b>4.</b> Hoạt động bảo vệ môi trường phải được tiến hành thường xuyên, công khai, minh bạch; ưu tiên dự báo, phòng ngừa ô nhiễm, sự cố, suy thoái môi trường, quản lý rủi ro về môi trường, giảm thiểu phát sinh chất thải, tăng cường tái sử dụng, tái chế chất thải.</p>
+
+        <p><b>5.</b> Bảo vệ môi trường phải phù hợp với quy luật, đặc điểm tự nhiên, văn hóa, lịch sử, cơ chế thị trường, trình độ phát triển kinh tế – xã hội; thúc đẩy phát triển vùng đồng bào dân tộc thiểu số và miền núi.</p>
+
+        <p><b>6.</b> Cơ quan, tổ chức, cộng đồng dân cư, hộ gia đình và cá nhân được hưởng lợi từ môi trường có nghĩa vụ đóng góp tài chính; gây ô nhiễm, sự cố và suy thoái môi trường phải chi trả, bồi thường và xử lý theo quy định pháp luật.</p>
+    </div>
+
+</div>
+
+<p style="margin-top:18px">
+    📌 Tìm hiểu thêm:
+    <a href="https://thuvienphapluat.vn/van-ban/tai-nguyen-moi-truong/Luat-so-72-2020-QH14-Bao-ve-moi-truong-2020-431147.aspx">
+        Luật Bảo vệ môi trường 2020
+    </a>
+</p>
+
+
+
+            </article>
+        
+      
+
+            <article>
+                <h3>2. Giáo dục và nâng cao ý thức cộng đồng</h3>
+                <p>  Hiện nay nhiều tổ chức và cơ sỡ giáo dục dã đưa giáo dục môi trường vào trường học,tổ chức chiến dịch dọn rác, trồng cây, lan tỏa lối sống xanh trong cộng đồng như 
+<img src="anh/wwf.png"><p style="text-align:center"><b>
+WWF – Quỹ Quốc tế Bảo vệ Thiên nhiên</b></p> </p>
+<b><p style="text-align:center"><img src="anh/green.jpg">GreenHub Việt Nam</p></b>
+   </article>
+
+
+
+       <div class="step-wrapper">
+        <a>trang</a>
+       <a href="index.html" class="step">1</a>
+  <a href="2.html" class="step">2</a>
+  <a href="3.html" class="step">3</a>
+  <a href="4.html" class="step">4</a>
+  <a href="5.html" class="step">5</a>
+  <a href="6.html" class="step">6</a>
+  <a href="7.html" class="step">7</a>  
+</div>
+
+           <h2>Góc bình luận</h2>
+
+<form id="commentForm">
+    <label>Họ tên:</label><br>
+    <input type="text" id="name" placeholder="Nhập họ tên" required><br><br>
+
+    <label>Bình luận:</label><br>
+    <textarea id="comment" rows="4" placeholder="Nhập bình luận" required></textarea><br><br>
+
+    <button type="submit">Gửi</button>
+</form>
+
+<!-- NƠI HIỂN THỊ BÌNH LUẬN -->
+<div id="commentList"></div>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>Tổ 4 12A1</p>
+        <p>Email đại diện nhóm: truongcungtrang@gmail.com</p>
+        <p>Ngày cập nhật gần nhất: 1/1/2026</p>
+        <p>Nguồn tham khảo: social media</p>
+        <p><i>"Bảo vệ môi trường hôm nay – Cứu lấy tương lai ngày mai"</i></p>
+    </footer>
+  <div class="login-overlay" id="loginOverlay">
+    <div class="login-box">
+        <h3>Đăng nhập</h3>
+
+        <input id="username" type="text" placeholder="Username">
+        <input id="password" type="password" placeholder="Password">
+
+        <button onclick="loginNormal()">Đăng nhập</button>
+
+        <hr>
+
+        <button class="google-btn" onclick="loginSocial('Google')">
+            🔵 Đăng nhập bằng Google
+        </button>
+
+        <button class="apple-btn" onclick="loginSocial('Apple')">
+            🍎 Đăng nhập bằng Apple
+        </button>
+
+        <p onclick="closeLogin()">✖ Đóng</p>
+    </div>
+</div>
+
+
+<script>
+function toggleMenu() {
+    const menu = document.getElementById("menu");
+    menu.style.display = menu.style.display === "block" ? "none" : "block";
+}
+</script>
+<script>
+document.getElementById("commentForm").addEventListener("submit", function(e) {
+    e.preventDefault(); // không reload trang
+
+    const name = document.getElementById("name").value;
+    const comment = document.getElementById("comment").value;
+
+    const commentDiv = document.createElement("div");
+    commentDiv.classList.add("comment-item");
+
+    commentDiv.innerHTML = `
+    <strong>${name}</strong>
+    <p>${comment}</p>
+    <small style="color:gray">🕒 Vừa xong</small><br>
+    <button onclick="this.innerText='❤️ Đã thích'">👍 Thích</button>
+`;
+
+    document.getElementById("commentList").appendChild(commentDiv);
+
+    // reset form
+    document.getElementById("commentForm").reset();
+});
+</script>
+<script>
+const island = document.getElementById("dynamicIsland");
+
+/* MỞ */
+island.addEventListener("click", function(e){
+    e.stopPropagation();
+    if(!island.classList.contains("active")){
+        island.classList.add("opening");
+        requestAnimationFrame(()=>{
+            island.classList.add("active");
+            island.classList.remove("opening");
+        });
+    }
+});
+
+/* ĐÓNG */
+function closeIsland(e){
+    e.stopPropagation();
+    island.classList.remove("active");
+}
+
+/* CLICK NGOÀI → ĐÓNG */
+document.addEventListener("click", function(e){
+    if(island.classList.contains("active") && !island.contains(e.target)){
+        island.classList.remove("active");
+    }
+});
+</script>
+<script>
+function openLogin(){
+    document.getElementById("loginOverlay").style.display = "flex";
+}
+function closeLogin(){
+    document.getElementById("loginOverlay").style.display = "none";
+}
+</script>
+<script>
+const userIcon = document.getElementById("userIcon");
+const signinBtn = document.querySelector(".signin-btn");
+
+/* MỞ FORM */
+function openLogin(){
+    document.getElementById("loginOverlay").style.display = "flex";
+}
+
+/* ĐÓNG FORM */
+function closeLogin(){
+    document.getElementById("loginOverlay").style.display = "none";
+}
+
+/* LOGIN THƯỜNG */
+function loginNormal(){
+    const user = document.getElementById("username").value;
+    if(!user) return alert("Nhập username");
+
+    afterLogin(user);
+}
+
+/* LOGIN GOOGLE / APPLE (GIẢ LẬP) */
+function loginSocial(type){
+    const user = type + "_User";
+    afterLogin(user);
+}
+
+/* SAU KHI ĐĂNG NHẬP */
+function afterLogin(user){
+    closeLogin();
+    signinBtn.style.display = "none";
+    userIcon.style.display = "block";
+    userIcon.title = "Xin chào " + user;
+}
+
+/* LOAD LẠI → BẮT ĐĂNG NHẬP LẠI */
+window.onload = () => {
+    signinBtn.style.display = "block";
+    userIcon.style.display = "none";
+}
+</script>
+<script>
+/* ===== SEARCH DATABASE ===== */
+const searchData = [
+ {
+
+    
+    title: "lớp",
+    url: "5.html",
+    content: `
+      lớp
+        
+        memory
+        memories
+        kỷ niệm
+        trang 5
+        5
+        kỷ niệm với thầy cô
+        kỷ niệm
+    `
+  },
+  {
+
+    
+    title: "trang 2",
+    url: "2.html",
+    content: `
+      2 
+      trang 2 
+       biện pháp
+    `
+  },
+   {
+
+    
+    title: "trang 3",
+    url: "3.html",
+    content: `
+      3 
+      trang 3 
+       tương lai
+
+    `
+  },
+   {
+
+    
+    title: "trang 4",
+    url: "4.html",
+    content: `
+      4
+      trang 4 
+       ý nghĩa
+    `
+  },
+
+  {
+    title: "news",
+    url: "6.html",
+    content: `
+       6
+        hát
+        trang 6
+        thi hát
+    `
+  },
+  {
+    title: "trang trống",
+    url: "7.html",
+    content:
+     `
+      _____________
+        trang 7
+        7
+    `
+  },
+  {
+    title: "Trang chủ",
+    url: "index.html",
+    content: `
+      báo tường điện tử
+        môi trường học đường
+        trang chủ
+        1
+        trang 1
+        trang chính
+
+    `
+  },
+  {
+    title: "tkb",
+    url: "tkb.html",
+    content: `
+      tkb
+      thời khóa 
+      thời khóa biểu
+    `
+  },
+  {
+    title: "phim",
+    url: "phim.html",
+    content: `
+      phim ngắn
+      phim sex 
+      phim ngan to 4
+    `
+  },
+
+
+];
+
+
+/* ===== SEARCH FUNCTION ===== */
+function doSearch(){
+    const key = document.getElementById("searchInput").value
+        .toLowerCase()
+        .trim();
+
+    if(!key){
+        alert("Nhập từ khóa tìm kiếm");
+        return;
+    }
+
+    let bestMatch = null;
+    let maxScore = 0;
+
+    searchData.forEach(item => {
+        const text = (item.title + " " + item.content).toLowerCase();
+        let score = 0;
+
+        key.split(" ").forEach(word => {
+            if(text.includes(word)){
+                score++;
+            }
+        });
+
+        if(score > maxScore){
+            maxScore = score;
+            bestMatch = item;
+        }
+    });
+
+    if(bestMatch){
+        window.location.href = bestMatch.url;
+    } else {
+        alert("Không tìm thấy bài viết phù hợp");
+    }
+}
+
+/* ENTER để tìm */
+document.getElementById("searchInput").addEventListener("keydown", function(e){
+    if(e.key === "Enter"){
+        doSearch();
+    }
+});
+</script>
+
+
+
+</body>
+</html>
